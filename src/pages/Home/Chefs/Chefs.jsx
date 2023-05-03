@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ChefCart from '../ChefCart/ChefCart';
-import { Container } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 
 
 const Chefs = () => {
@@ -15,14 +15,15 @@ const Chefs = () => {
     
 
     return (
-        <Container>
-            <h2>Meet Our Expart Chef</h2>
-            <div>
+        <Container className='mt-5 pt-5'>
+            <h2 className='text-center'>Meet Our Expart Chef</h2>
+            <Row xs={1} lg={3} className="g-2">
                 {
                     chefs.map(chef => <ChefCart
+                    key={chef.id}
                     chef={chef}></ChefCart>)
                 }
-            </div>
+            </Row>
         </Container>
     );
 };

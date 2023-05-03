@@ -8,13 +8,13 @@ const Home = () => {
     return (
         <Container>
             <div className='d-lg-flex mt-4'>
-                <div className='mt-5 pt-5 px-2'>
+                <div className='mt-5 pt-5 px-2 mb-3'>
                     <h2>FIND ANYTHING WHAT YOU WANT TO EAT</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae enim non architecto culpa facere. Soluta nam commodi aperiam dolorum, labore odit dolores nostrum quae libero!</p>
                     <Button variant="warning">Show Details</Button>
                 </div>
                 <div>
-                    <img src={banner} alt="" />
+                    <img src={banner} alt=""/>
                 </div>
             </div>
             <div>
