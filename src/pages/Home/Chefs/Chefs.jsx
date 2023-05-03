@@ -5,23 +5,23 @@ import { Container } from 'react-bootstrap';
 
 const Chefs = () => {
     const [chefs, setChefs] = useState([]);
+    console.log(chefs);
 
     useEffect(() => {
         fetch(`http://localhost:5000/chefs`)
             .then((res) => res.json())
             .then((data) => setChefs(data))
     }, [])
-    console.log(chefs);
+    
 
     return (
         <Container>
             <h2>Meet Our Expart Chef</h2>
             <div>
-                {/* {
+                {
                     chefs.map(chef => <ChefCart
-                    key={chef.id}
-                    chefs={chef}></ChefCart>)
-                } */}
+                    chef={chef}></ChefCart>)
+                }
             </div>
         </Container>
     );

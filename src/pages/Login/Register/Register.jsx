@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
+    // const {createUser} = useContext;
     return (
-        <Container className='w-25 ms-auto mt-5 bg-light p-4 rounded'>
+        <Container className='w-50 ms-auto mt-5 bg-light p-4 rounded'>
             <h3 className='fw-bold text-warning'>Register your <span className='text-success'>account</span></h3>
             <Form className='mt-5'>
             <Form.Group className="mb-3" controlId="formBasicEmail">
