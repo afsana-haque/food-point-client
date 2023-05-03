@@ -5,7 +5,7 @@ import { Container, Row } from 'react-bootstrap';
 
 const Chefs = () => {
     const [chefs, setChefs] = useState([]);
-    console.log(chefs);
+    // console.log(chefs);
 
     useEffect(() => {
         fetch(`http://localhost:5000/chefs`)

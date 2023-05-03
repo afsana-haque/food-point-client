@@ -7,6 +7,7 @@ import ChefCart from "../pages/Home/ChefCart/ChefCart";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
+import Recipe from "../pages/ViewRecipe/Recipe/Recipe";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,11 @@ const router = createBrowserRouter([
         {
           path:"/",
           element:<ChefCart></ChefCart>
+        },
+        {
+          path:"/chefs/:id",
+          element:<Recipe></Recipe>,
+          loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
         },
         {
           path:"/login",

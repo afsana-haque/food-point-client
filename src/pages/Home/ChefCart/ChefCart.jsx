@@ -1,10 +1,11 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { HiOutlineThumbUp} from "react-icons/hi";
+import { Link } from 'react-router-dom';
 
 const ChefCart = ({chef}) => {
-    const { id, picture, experience, name, ratings,recipesNumber} = chef;
-    console.log(chef);
+    const { id, picture, experience, name, likes,recipesNumber} = chef;
+    // console.log(chef);
     return (
         <div className='mr-5 my-4 p-3'>
             <Card style={{ width: '22rem'}}>
@@ -13,8 +14,10 @@ const ChefCart = ({chef}) => {
                     <Card.Title >{name}</Card.Title>
                     <Card.Text className='fw-semibold'>Experience {experience}</Card.Text>
                     <Card.Text>Recipes: {recipesNumber}</Card.Text>
-                    <Card.Text><HiOutlineThumbUp className='fs-5'></HiOutlineThumbUp> {ratings}</Card.Text>
+                    <Card.Text><HiOutlineThumbUp className='fs-5'></HiOutlineThumbUp> {likes}</Card.Text>
+                    <Link to={`/chefs/${id}`}>
                     <Button variant="warning" className='text-success-emphasis'>View Recipe</Button>
+                    </Link>
                 </Card.Body>
             </Card>
         </div>
