@@ -12,6 +12,10 @@ const Register = () => {
                     <Form.Control type="text" name='name' placeholder="Your Name" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label className='fw-semibold'>Photo URL</Form.Label>
+                    <Form.Control type="text" name='photo' placeholder="photo url" required />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className='fw-semibold'>Email address</Form.Label>
                     <Form.Control type="email" placeholder="Enter email" required/>
                 </Form.Group>
@@ -19,9 +23,6 @@ const Register = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label className='fw-semibold'>Password</Form.Label>
                     <Form.Control type="password" placeholder="Password" required />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
                 <Button variant="warning" type="submit">
                 Register

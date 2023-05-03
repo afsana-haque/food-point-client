@@ -17,10 +17,11 @@ const Chefs = () => {
         <Container>
             <h2>Meet Our Expart Chef</h2>
             <div>
-                {
+                {/* {
                     chefs.map(chef => <ChefCart
+                    key={chef.id}
                     chefs={chef}></ChefCart>)
-                }
+                } */}
             </div>
         </Container>
     );
