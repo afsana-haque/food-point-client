@@ -6,11 +6,13 @@ import Login from "../Loing/Login/Login";
 import Register from "../Loing/Register/Register";
 import Blog from "../pages/Blog/Blog";
 import ChefCart from "../pages/Home/ChefCart/ChefCart";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
             path:"/",
