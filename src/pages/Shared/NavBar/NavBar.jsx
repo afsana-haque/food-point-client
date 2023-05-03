@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
-import { FaRegUserCircle } from 'react-icons/fa';
+import img from "../../../assets/img.png"
+import "./NavBar.css"
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     return (
@@ -13,12 +15,13 @@ const NavBar = () => {
                         <Nav className="me-auto">
                         </Nav>
                         <Nav>
-                        <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
-                            <Nav.Link href="#deets"><FaRegUserCircle className='fs-2 mx-2' /></Nav.Link>
-                            <Nav.Link eventKey={2} href="#memes">
-                            <Button variant="warning">Login</Button>
-                            </Nav.Link>
+                            <Link to="/" className='text-decoration-none px-2 text-secondary py-3'>Home</Link>
+                            <Link to="/blog" className='text-decoration-none px-2  py-3 text-secondary'>Blog</Link>
+                            <Link to="/register" className='text-decoration-none px-2  py-3 text-secondary'>Registration</Link>
+                            <Link><img className='img mx-3 my-2' src={img} alt="" /></Link>
+                            <Link to="/login">
+                                <Button variant="warning" className='my-2'>Login</Button>
+                            </Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -28,3 +31,5 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+//className='fs-2 mx-2'
