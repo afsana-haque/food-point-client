@@ -4,18 +4,23 @@ import { GoogleAuthProvider,getAuth, signInWithPopup,GithubAuthProvider } from "
 import app from '../../firebase/firebase.config';
 import { FaGoogle , FaGithub} from "react-icons/fa";
 import { Button } from 'react-bootstrap';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const SocialLoginBtn = () => {
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState(null)
     const auth = getAuth(app);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || "/";
 
     const handleGoogleLogin = () =>{
         signInWithPopup(auth, googleProvider)
         .then((result) => {
             const user = result.user;
-            setUser(user)
+            setUser(user);
+            navigate(from, {replace: true});
         })
         .catch((error) =>{
             const errorMessage = error.message;
@@ -28,6 +33,7 @@ const SocialLoginBtn = () => {
         .then((result) => {
             const user = result.user;
             console.log(user);
+            navigate(from, {replace: true});
         })
         .catch((error) =>{
             const errorMessage = error.message;

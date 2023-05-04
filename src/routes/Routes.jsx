@@ -31,7 +31,7 @@ const router = createBrowserRouter([
         {
           path:"/chefs/:id",
           element: <PrivateRoutes><Recipe></Recipe></PrivateRoutes>,
-          loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
+          loader: ({params}) => fetch(`https://food-point-scerver-afsana-haque.vercel.app/chefs/${params.id}`)
         },
         {
           path:"/login",

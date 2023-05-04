@@ -8,7 +8,7 @@ const Chefs = () => {
     // console.log(chefs);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/chefs`)
+        fetch(`https://food-point-scerver-afsana-haque.vercel.app/chefs`)
             .then((res) => res.json())
             .then((data) => setChefs(data))
     }, [])

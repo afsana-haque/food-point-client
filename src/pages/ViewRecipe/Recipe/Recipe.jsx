@@ -12,11 +12,11 @@ const Recipe = () => {
             <Card className='w-75'>
                 <Card.Body className='p-3 '>
                     <Card.Title>Recipe:</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted py-1">{recipes[0].ingredients[0]}, {recipes[0].ingredients[1]}, {recipes[0].ingredients[2]},</Card.Subtitle>
-                    <Card.Subtitle className="mb-2 text-muted py-1">{recipes[0].ingredients[3]}, {recipes[0].ingredients[4]}, {recipes[0].ingredients[5]},</Card.Subtitle>
-                    <Card.Subtitle className="mb-2 text-muted py-1">{recipes[0].ingredients[7]}, {recipes[0].ingredients[8]}, {recipes[0].ingredients[9]},  {recipes[0].ingredients[10]},</Card.Subtitle>
+                    <Card.Subtitle className="mb-2 text-muted py-1">{recipes[0]?.ingredients[0]}, {recipes[0]?.ingredients[1]}, {recipes[0]?.ingredients[2]},</Card.Subtitle>
+                    <Card.Subtitle className="mb-2 text-muted py-1">{recipes[0]?.ingredients[3]}, {recipes[0]?.ingredients[4]}, {recipes[0]?.ingredients[5]},</Card.Subtitle>
+                    <Card.Subtitle className="mb-2 text-muted py-1">{recipes[0]?.ingredients[7]}, {recipes[0]?.ingredients[8]}, {recipes[0]?.ingredients[9]},  {recipes[0]?.ingredients[10]},</Card.Subtitle>
                      
-                    <Card.Text><span className='fw-bold'>Method: </span>{recipes[0].method}</Card.Text>
+                    <Card.Text><span className='fw-bold'>Method: </span>{recipes[0]?.method}</Card.Text>
                 </Card.Body>
             </Card>
         </Container>
