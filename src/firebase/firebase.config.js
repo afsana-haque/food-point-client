@@ -4,13 +4,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log('environment variable', import.meta.env.VITE_PASS)
 const firebaseConfig = {
-  apiKey: "AIzaSyBeDx8sGGa9vx2A6RqFiPq7FXzsuUPZtyY",
-  authDomain: "food-point-hunter.firebaseapp.com",
-  projectId: "food-point-hunter",
-  storageBucket: "food-point-hunter.appspot.com",
-  messagingSenderId: "1009861150662",
-  appId: "1:1009861150662:web:7d2eaa88cb0ccaf6d314c7"
+  apiKey: import.meta.VITE_APIKEY,
+  authDomain: import.meta.VITE_AUTHDOMAIN,
+  projectId: import.meta.VITE_PROJECTID,
+  storageBucket: import.meta.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.VITE_MESSAGINGSENDERID,
+  appId: import.meta.VITE_APPID
 };
 
 // Initialize Firebase
