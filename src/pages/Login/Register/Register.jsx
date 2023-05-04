@@ -9,19 +9,20 @@ const Register = () => {
 
     const handleRegister = event => {
         event.preventDefault();
-        if ((password) < 6) {
-            console.log("okay tikh ace ");
-          } else {
-            setError("password tikh nai");
-            return;
-          }
-      
+
         const form = event.target;
         const name = form.name.value;
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
         console.log(name, photo, email, password);
+        if ((password) < 6) {
+            console.log("okay tikh ace ");
+          } 
+          else {
+            setError("password tikh nai");
+          }
+
 
         createUser(email, password)
         .then(result => {
@@ -37,6 +38,7 @@ const Register = () => {
         <Container className='w-50 ms-auto mt-5 bg-light p-4 rounded'>
             <h3 className='fw-bold text-warning'>Register your <span className='text-success'>account</span></h3>
             <Form onSubmit={handleRegister} className='mt-5'>
+                <p className='text-danger fw-bold'>{error}</p>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className='fw-semibold'>Your Name</Form.Label>
                     <Form.Control type="text" name='name' placeholder="Your Name" required />

@@ -1,23 +1,47 @@
-import React from 'react';
-import "./SocialLoginBtn.css"
+import React, { useState } from 'react';
+import "./SocialLoginBtn.css";
+import { GoogleAuthProvider,getAuth, signInWithPopup,GithubAuthProvider } from "firebase/auth";
+import app from '../../firebase/firebase.config';
+import { FaGoogle , FaGithub} from "react-icons/fa";
+import { Button } from 'react-bootstrap';
 
 const SocialLoginBtn = () => {
+    const [user, setUser] = useState({})
+    const auth = getAuth(app);
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
+
+    const handleGoogleLogin = () =>{
+        signInWithPopup(auth, googleProvider)
+        .then((result) => {
+            const user = result.user;
+            setUser(user)
+        })
+        .catch((error) =>{
+            const errorMessage = error.message;
+            console.log(errorMessage);
+        });
+    };
+
+    const  handleGithubLogin = () =>{
+        signInWithPopup(auth, githubProvider)
+        .then((result) => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch((error) =>{
+            const errorMessage = error.message;
+        })
+    }
+
     return (
         <div>
             <div className=" social-button-container w-50 mt-3 mb-5">
-                <div className="">
-                    <img
-                        className=" social-button"
-                        src="https://i.ibb.co/gSTHXZJ/google-btn.png"
-                        alt=""
-                    />
+                <div className="mb-3">
+                    <Button onClick={handleGoogleLogin}  variant="primary" className='fw-bold text-white'><FaGoogle className='bg-white text-primary fs-2 p-1'></FaGoogle> Sing in with Google</Button>
                 </div>
                 <div className="">
-                    <img
-                        className=" social-button"
-                        src="https://i.ibb.co/g9f4P0S/github-btn.png"
-                        alt=""
-                    />
+                       <Button onClick={handleGithubLogin} variant="dark" className='fw-bold text-white'><FaGithub className='fs-2 p-1'></FaGithub> Sing in with Github</Button>
                 </div>
             </div>
         </div>
@@ -25,5 +49,4 @@ const SocialLoginBtn = () => {
 };
 
 export default SocialLoginBtn;
-// onClick={handleGithubLogin}
-//onClick={handleGithubLogin}
+
