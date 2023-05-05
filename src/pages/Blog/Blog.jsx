@@ -16,7 +16,7 @@ const Blog = () => {
             </div>
             <div className='py-4 px-2'>
                 <h4>1. In the context of software engineering, uncontrolled and controlled components refer to different types of software elements?</h4>
-                <p>Answer: uncontrolled and controlled components refer to different types of software elements.Uncontrolled components are those that can be used in a system without any predefined rules or restrictions. These components can be used in any way the developer sees fit and can interact with other components without any predefined rules or restrictions. Examples of uncontrolled components include third-party libraries or frameworks that are added to a project.</p>
+                <p>Answer: uncontrolled and controlled components refer to different types of software elements.Uncontrolled components are those that can be used in a system without any predefined rules or restrictions. These components can be used in any way the developer sees fit and can interact with other components without any predefined rules or restrictions. Examples of uncontrolled components include third-party libraries or frameworks that are added to a project. </p>
 
                 <h4>2. How to validate React props using PropTypes?</h4>
                 <p>Answer: PropTypes is a type checking library used to validate the props passed to a component. PropTypes ensures that the props have the expected data type and shape before they are used in the component. Here's an example of how to validate React props </p>
