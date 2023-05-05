@@ -1,10 +1,19 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import ReactToPdf from 'react-to-pdf';
 
+const ref = React.createRef();
 const Blog = () => {
     return (
-        <Container className='mt-4'>
+        <Container className='mt-4' ref={ref}>
             <h3 className='text-center'> Answer to the Questions</h3>
+            <div className='w-25 mx-auto my-5'>
+                <ReactToPdf targetRef={ref} filename="foodPoint-blog.pdf">
+                    {({ toPdf }) => (
+                        <button onClick={toPdf} className='bg-success p-2 text-white'>Generate pdf</button>
+                    )}
+                </ReactToPdf>
+            </div>
             <div className='py-4 px-2'>
                 <h4>1. In the context of software engineering, uncontrolled and controlled components refer to different types of software elements?</h4>
                 <p>Answer: uncontrolled and controlled components refer to different types of software elements.Uncontrolled components are those that can be used in a system without any predefined rules or restrictions. These components can be used in any way the developer sees fit and can interact with other components without any predefined rules or restrictions. Examples of uncontrolled components include third-party libraries or frameworks that are added to a project.</p>
